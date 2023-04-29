@@ -1,6 +1,8 @@
 #ifndef LINKED_H
 #define LINKED_H
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 /*En este ejemplo utilizare una lista enlazada simple y realizare las operaciones basicas de inserción y supresión 
  *de elementos dentro de la lista, tambien usaremos funciones para escanear y mostrar por pantalla los elementos de 
@@ -36,16 +38,16 @@ lista destruir_nodo (lista L); // Elimina un nodo en la lista
 int verificar (lista L); // verifica si existen elementos en la lista 
 
 /*Para Insertar Elementos en la lista*/
-lista insertar_inicio (lista L,Persona P); // Esta funcion devuelve una lista con un elemento insertado al inicio
-lista insertar_mitad  (lista L,Persona P); // Esta funcion devuelve una lista con un elemento insertado a la mitad 
-lista inserta_final   (lista L,Persona P); // Esta funcion devuelve una lista con un elemento insertado al final 
-lista insercion_general (lista,Persona P); // Esta funcion engloba los tres tipos de insercion y devuelve la lista con el elemento ya insertado
+lista insertar_inicio (lista L); // Esta funcion devuelve una lista con un elemento insertado al inicio
+lista insertar_mitad  (lista L); // Esta funcion devuelve una lista con un elemento insertado a la mitad 
+lista insertar_final   (lista L); // Esta funcion devuelve una lista con un elemento insertado al final 
+lista insercion_general (lista L); // Esta funcion engloba los tres tipos de insercion y devuelve la lista con el elemento ya insertado
 
 /*Para Elimimar Elementos en la lista*/
-lista eliminar_inicio (lista L); // Devuelve una lista cuyo elemento ha sido eliminado al inicio.
-lista eliminar_mitad (lista L); // Devuelve una lista cuyo elemento ha sido eliminado en la mitad. 
-lista eliminar_final (lista L); // Devuelve una lista cuyo elemento ha sido eliminado al final. 
-lista supresion_general(lista L);// Engloba los tres tipos de supresion.
+void suprimir (lista L,int element); // Elimina un elemento en la lista segun un entero que precise el usuario
+
+/*Menu*/
+int menu(); // Muestra las distintas opciones que podemos unsar en el programa.
 
 #endif // LINKED_H
 
