@@ -126,21 +126,21 @@ lista insercion_general (lista L)
  int opt;
  printf("-->En que posicion desea Insertar el elemento en la lista\n");
  printf("1. Al inicio\n2. En la mitad\n3. Al final\n");
- printf("Ingrese una opcion valida del 1 al 3");
+ printf("Ingrese una opcion valida del 1 al 3: ");
  scanf("%d", &opt);
  switch (opt)
  {
  case 1:
- insertar_inicio(L); 
+ L = insertar_inicio(L); 
  break;
  case 2:
- insertar_mitad(L);
+ L = insertar_mitad(L);
  break;
  case 3:
- insertar_final(L);
+ L = insertar_final(L);
  break;
  default:
- printf("Error: Escoja una opcion valida\n");
+ printf("Error: Escoja una opcion valida: ");
  break;
  }
 return L;
