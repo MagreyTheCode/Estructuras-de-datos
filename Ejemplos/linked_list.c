@@ -18,6 +18,7 @@ return opcion;
 void leer (Persona *P)
 {
  printf ("\nNombre: ");
+ fflush(stdin);
  scanf("%[^\n]",P->nombre); // Cadena compuesta 
  printf("\nEdad: ");
  scanf("%d",&P->edad);

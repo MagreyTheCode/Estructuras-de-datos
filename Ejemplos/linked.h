@@ -14,7 +14,7 @@
 
 typedef struct 
 { 
-char nombre; 
+char nombre[30]; 
 int edad;
 int Id;
 float peso;
@@ -30,7 +30,7 @@ typedef struct nodo *lista;
 /*Esta funcion leerá los datos escritos por un usuario en la lista enlazada simple */
 void leer (Persona *P);
 /*Esta funcion muestra los datos que ha almacenado la lista por pantalla*/ 
-
+void escribir (lista L);
 /*En esa seccion utilizare el paradigma divide y venceras para poder insertar elementos en la lista*/
 
 lista crear_nodo (lista L); // crea un nodo en la lista 
