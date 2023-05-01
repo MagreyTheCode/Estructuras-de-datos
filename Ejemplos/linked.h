@@ -26,21 +26,23 @@ struct nodo
 };
 typedef struct nodo *lista;
 
+/*Inicia una lista vacia*/
+lista list_empty(void);
 /*Esta funcion leerá los datos escritos por un usuario en la lista enlazada simple */
-void leer(Persona *P);
+void leer_nodo(Persona *P);
 /*Esta funcion muestra los datos que ha almacenado la lista por pantalla*/
-void escribir(lista L);
+void mostrar_nodo(lista L);
 /*En esa seccion utilizare el paradigma divide y venceras para poder insertar elementos en la lista*/
 
-lista crear_nodo(lista L);    // crea un nodo en la lista
+lista crear_nodo(Persona P);  // crea un nodo en la lista
 lista destruir_nodo(lista L); // Elimina un nodo en la lista
 int verificar(lista L);       // verifica si existen elementos en la lista
 
 /*Para Insertar Elementos en la lista*/
-lista insertar_inicio(lista L);   // Esta funcion devuelve una lista con un elemento insertado al inicio
-lista insertar_mitad(lista L);    // Esta funcion devuelve una lista con un elemento insertado a la mitad
-lista insertar_final(lista L);    // Esta funcion devuelve una lista con un elemento insertado al final
-lista insercion_general(lista L); // Esta funcion engloba los tres tipos de insercion y devuelve la lista con el elemento ya insertado
+lista insertar_inicio(lista L, Persona P); // Esta funcion devuelve una lista con un elemento insertado al inicio
+lista insertar_mitad(lista L);             // Esta funcion devuelve una lista con un elemento insertado a la mitad
+lista insertar_final(lista L);             // Esta funcion devuelve una lista con un elemento insertado al final
+lista insercion_general(lista L);          // Esta funcion engloba los tres tipos de insercion y devuelve la lista con el elemento ya insertado
 
 /*Para Elimimar Elementos en la lista*/
 void suprimir(lista L, int element); // Elimina un elemento en la lista segun un entero que precise el usuario

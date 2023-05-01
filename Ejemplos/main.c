@@ -2,17 +2,24 @@
 
 void main()
 {
+    /*Aqui declaro las variables que usare despues*/
+
+    char continuar[2];
     int option, eliminar;
-    lista L = NULL;
+    lista L;
     Persona P;
+    L = list_empty(); // Inicializacion de una lista Vacia
+
+    /*Opciones del Menu del programa*/
     enum
     {
         Salir = 0,
-        Leer_Estructura = 1, 
+        Leer_Estructura = 1,
         Mostrar_Lista = 2,
         Insertar_Elementos = 3,
         Eliminar_Elementos = 4,
     };
+
     do
     {
         option = menu();
@@ -22,18 +29,21 @@ void main()
             system("pause");
             break;
         case Leer_Estructura:
-            leer(&P);
+            leer_nodo(&P, L);
             break;
         case Mostrar_Lista:
-            escribir(L);
+            mostrar_nodo(L);
             break;
         case Insertar_Elementos:
-            insercion_general(L);
+            do
+            {
+                printf("¿Desea continuar insertando elementos en la lista? (si/no): ");
+                scanf("%s", continuar);
+            } while (strcmp(continuar, "no") != 0);
             break;
         case Eliminar_Elementos:
             printf("Elemento a eliminar: ");
-            scanf("%d", &eliminar);
-            suprimir(L, eliminar);
+            printf("%d", &eliminar);
             break;
         default:
             printf("Elija Una Opcion Correcta entre  0-4\n");
