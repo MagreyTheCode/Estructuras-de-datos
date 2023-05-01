@@ -4,4 +4,4 @@ Ejemplos/.vscode/*
 .ccls-cache/*
 Ejemplos/output/
 *.o 
-
+*.exe
