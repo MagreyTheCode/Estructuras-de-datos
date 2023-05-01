@@ -29,7 +29,7 @@ void main()
             system("pause");
             break;
         case Leer_Estructura:
-            leer_nodo(&P, L);
+            leer_nodo(&P);
             break;
         case Mostrar_Lista:
             mostrar_nodo(L);
@@ -37,6 +37,7 @@ void main()
         case Insertar_Elementos:
             do
             {
+                insercion_general(L);
                 printf("¿Desea continuar insertando elementos en la lista? (si/no): ");
                 scanf("%s", continuar);
             } while (strcmp(continuar, "no") != 0);

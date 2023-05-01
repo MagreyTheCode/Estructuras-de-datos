@@ -20,6 +20,37 @@ int menu()
   return opcion;
 }
 
+/*Creacion de Nodos*/
+
+lista *crear_nodo(Persona P)
+{
+  struct nodo *nuevo;
+  /*Reservamos memoria para crear un nuevo nodo*/
+  nuevo = (struct nodo *)malloc(sizeof(struct nodo));
+  /*Si se ha reservado la memoria correctamente entonces procedemos*/
+  if (nuevo != NULL)
+  {
+    /*En su campo dato ponemos el nuevo dato*/
+    nuevo->data = P;
+    nuevo->next = NULL;
+  }
+  return nuevo;
+}
+
+int verificar(lista L)
+{
+  /*Si la lista esta Vacia devolvemos el valor 1*/
+  if (L == NULL)
+  {
+    return 1;
+  }
+  /*Si no, se devuelve 0*/
+  else
+  {
+    return 0;
+  }
+}
+
 void leer_nodo(Persona *P)
 {
   printf("\nNombre: ");
@@ -47,51 +78,73 @@ void mostrar_nodo(lista L)
   }
 }
 
-lista crear_nodo(Persona P)
+lista *insertar_inicio(lista *L, Persona P)
 {
-  Persona D; // Nuevo dato
+
   struct nodo *nuevo;
-  /*Reservamos memoria para crear un nuevo nodo*/
-  nuevo = (lista)malloc(sizeof(struct nodo));
-  /*En su campo dato ponemos el nuevo dato*/
-  nuevo->data = D;
-  return nuevo;
-}
-
-lista destruir_nodo(lista L)
-{
-  L->next = NULL;
-  free(L);
-  return L;
-}
-
-int verificar(lista L)
-{
-  /*Si la lista esta Vacia devolvemos el valor 1*/
-  if (L == NULL)
+  nuevo = crear_nodo(P);
+  if (nuevo != NULL)
   {
-    return 1;
+    nuevo->next = *L;
+    *L = nuevo;
+    return L;
   }
-  /*Si no, se devuelve 0*/
   else
   {
-    return 0;
+    printf("Error: Cannot allocate memory\n"); // No se pudo reservar memoria
+    return NULL;
   }
 }
 
-lista insertar_inicio(lista L, Persona P)
+lista *insertar_mitad(lista *L, Persona P)
 {
+  struct nodo *nuevo;
+  /*Para encontrar el nodo de la mitad*/
+  struct nodo *lento = *L;
+  struct nodo *rapido = *L;
+  /*nuevo nodo*/
+  nuevo = crear_nodo(P);
+  if (nuevo != NULL)
+  {
+    while (rapido->next != NULL && rapido->next->next != NULL)
+    {
+      lento = lento->next;
+      rapido = rapido->next->next;
+    }
+    /*Insercion del nodo a la mitad*/
+    nuevo->next = lento->next;
+    lento->next = nuevo;
+    return L;
+  }
+  else
+  {
+    printf("Error: cannot allocate memory\n");
+    return NULL;
+  }
 }
 
-lista insertar_mitad(lista L)
+lista *insertar_final(lista *L, Persona P)
 {
+  struct nodo *nuevo;
+  struct nodo *temp;
+  nuevo = crear_nodo(P);
+  if (nuevo != NULL)
+  {
+    while (temp->next != NULL)
+    {
+      temp = temp->next;
+    }
+    temp->next = nuevo;
+    return L;
+  }
+  else
+  {
+    printf("Error cannot allocate memory\n");
+    return NULL;
+  }
 }
 
-lista insertar_final(lista L)
-{
-}
-
-lista insercion_general(lista L)
+lista *insercion_general(lista *L)
 {
   int opt;
   Persona P;
@@ -106,11 +159,11 @@ lista insercion_general(lista L)
     return L;
     break;
   case 2:
-    L = insertar_mitad(L);
+    L = insertar_mitad(L, P);
     return L;
     break;
   case 3:
-    L = insertar_final(L);
+    L = insertar_final(L, P);
     return L;
     break;
   default:
