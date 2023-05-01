@@ -1,5 +1,7 @@
-Estructuras-de-datos\Ejemplos\.vscode\
-Estructuras-de-datos\.ccls-cache\
-Estructuras-de-datos\Ejemplos\output\
+Ejemplos/.vscode/
+Ejemplos/.vscode/*
+.ccls-cache/
+.ccls-cache/*
+Ejemplos/output/
 *.o 
 
