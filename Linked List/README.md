@@ -66,7 +66,8 @@ typedef Nodo *Lista; // Nodo procede del Allias de la estructura nodo
 
 # ¿Cual es la problematica que permite el surgimiento de este tipo de estructura de datos?
 
-- La problemática que permite el surgimiento de listas enlazadas simples es la necesidad de almacenar y acceder a datos de forma dinámica, es decir, cuando no se sabe de antemano la cantidad exacta de datos que se van a manejar y/o su tamaño puede cambiar durante la ejecución del programa, lo que las hace útiles para la implementación de estructuras de datos como pilas, Filas y listas doblemente enlazadas.
+La problemática que permite el surgimiento de listas enlazadas simples es la necesidad de almacenar y acceder a datos de forma dinámica, es decir, cuando no se sabe de antemano la cantidad exacta de datos que se van a manejar y/o su tamaño puede cambiar durante la ejecución del programa, lo que las hace útiles para la implementación de estructuras de datos como pilas, Filas y listas doblemente enlazadas.
+He aqui otros aspectos que permiten su surgimiento:
 
 - Eficiencia en la inserción y eliminación de elementos: a diferencia de los arreglos estáticos, en los cuales agregar o eliminar elementos puede ser costoso en términos de tiempo y espacio, las listas enlazadas simples permiten la inserción y eliminación de elementos de forma más eficiente.
 
@@ -76,7 +77,7 @@ typedef Nodo *Lista; // Nodo procede del Allias de la estructura nodo
 
 - Facilidad de ordenamiento: en algunas situaciones, las listas enlazadas simples pueden ser más fáciles de ordenar que los arreglos estáticos.
 
-# ¿Que operaciones importantes se usan en las Pilas simplemente enlazadas?
+# ¿Que operaciones importantes se usan en las Listas simplemente enlazadas?
 
 - Agregar un elemento al principio de la lista: esta operación permite agregar un nuevo elemento al inicio de la lista:
   void `Agregar(Lista L, Persona P)`
