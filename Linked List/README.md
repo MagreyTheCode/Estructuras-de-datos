@@ -25,7 +25,7 @@ Node* List;        //creacion de una lista
 List=NULL;        //inicio o cabeza de la lista inicializada a NULL
 ```
 
-- Segunda forma para declarar Listas
+- Segunda forma de declarar:
 
 ```c
 typedef struct persona{
@@ -43,7 +43,7 @@ struct nodo * next;
 typedef struct nodo * list; // creavos un alias para la lista
 ```
 
-- Tercera Forma para declarar Listas enlazadas simples
+- Tercera Forma de declarar:
 
 ```c
 typedef struct persona{
@@ -82,7 +82,7 @@ typedef Nodo *Lista; // Nodo procede del Allias de la estructura nodo
 NB: La forma de agregar elementos en una lista varia segun la posicion en la cual querramos agregar el elemento es decir, de la manera en que agrego un elemento al inicio de la lista, no es de la misma forma en que agrego este en la mitad y al final de la lista.
 
 - Eliminar un elemento del inicio de la lista: esta operación permite eliminar el primer elemento de la lista:
-  void `Eliminar(Lista L)`
+  `void Eliminar(Lista L)`
 
 NB: De igual forma que para agregar, para suprimir un elemento en la lista, debemos saber que la manera de tratar este procedimienfo varia segun la posicion en que se encuentre el elemento.
 
