@@ -1,7 +1,7 @@
-Ejemplos/.vscode/
-Ejemplos/.vscode/*
+Linked List/.vscode/
+Linked List/.vscode/*
 .ccls-cache/
 .ccls-cache/*
-Ejemplos/output/
+Linked List/output/
 *.o 
 *.exe
