@@ -9,6 +9,7 @@ NB: un nodo esta formado por un dato y un puntero al siguiente nodo.
 
 - Primera forma de declarar una lista:
 
+```c
 typedef struct{
 int edad;
 float peso;
@@ -17,14 +18,16 @@ char nombre[30];
 
 typedef struct node{
 persona info;
-struct node *Next;   `El elemento siguiente de la lista`
-}Node;              `variable de la Lista`
+struct node *Next;   //El elemento siguiente de la lista
+}Node;              //variable de la Lista
 
-Node* List;        `creacion de una lista`
-List=NULL;        `inicio o cabeza de la lista inicializada a NULL`
+Node* List;        //creacion de una lista
+List=NULL;        //inicio o cabeza de la lista inicializada a NULL
+```
 
 - Segunda forma para declarar Listas
 
+```c
 typedef struct persona{
 int edad;
 float peso;
@@ -37,29 +40,30 @@ persona info;
 struct nodo * next;
 };
 
-typedef struct nodo * list;
-
+typedef struct nodo * list; // creavos un alias para la lista
+```
 
 - Tercera Forma para declarar Listas enlazadas simples
 
+```c
 typedef struct persona{
 int edad;
 float peso;
 char nombre[30];
 }
 
-typedef struct nodo Nodo;  `creacion de una estructura nodo con un Allias Nodo`
+typedef struct nodo Nodo;  //creacion de una estructura nodo con un Allias Nodo
 
-struct nodo{   `es el nombre de la estructura`
+struct nodo{   //es el nombre de la estructura
 persona P;
 struct nodo *next;
 };
 
-typedef Nodo *Lista; `Nodo procede del Allias de la estructura nodo`
-
+typedef Nodo *Lista; // Nodo procede del Allias de la estructura nodo
+```
 
 # ¿Cual es la problematica que permite el surgimiento de este tipo de estructura de datos?
-  
+
 - La problemática que permite el surgimiento de listas enlazadas simples es la necesidad de almacenar y acceder a datos de forma dinámica, es decir, cuando no se sabe de antemano la cantidad exacta de datos que se van a manejar y/o su tamaño puede cambiar durante la ejecución del programa, lo que las hace útiles para la implementación de estructuras de datos como pilas, Filas y listas doblemente enlazadas.
 
 - Eficiencia en la inserción y eliminación de elementos: a diferencia de los arreglos estáticos, en los cuales agregar o eliminar elementos puede ser costoso en términos de tiempo y espacio, las listas enlazadas simples permiten la inserción y eliminación de elementos de forma más eficiente.
@@ -70,32 +74,29 @@ typedef Nodo *Lista; `Nodo procede del Allias de la estructura nodo`
 
 - Facilidad de ordenamiento: en algunas situaciones, las listas enlazadas simples pueden ser más fáciles de ordenar que los arreglos estáticos.
 
-
-# ¿Que operaciones importantes se usan en las Pilas simplemente enlazadas? 
+# ¿Que operaciones importantes se usan en las Pilas simplemente enlazadas?
 
 - Agregar un elemento al principio de la lista: esta operación permite agregar un nuevo elemento al inicio de la lista:
-void `Agregar(Lista L, Persona P)`
+  void `Agregar(Lista L, Persona P)`
 
 NB: La forma de agregar elementos en una lista varia segun la posicion en la cual querramos agregar el elemento es decir, de la manera en que agrego un elemento al inicio de la lista, no es de la misma forma en que agrego este en la mitad y al final de la lista.
 
 - Eliminar un elemento del inicio de la lista: esta operación permite eliminar el primer elemento de la lista:
-void `Eliminar(Lista L)`
+  void `Eliminar(Lista L)`
 
 NB: De igual forma que para agregar, para suprimir un elemento en la lista, debemos saber que la manera de tratar este procedimienfo varia segun la posicion en que se encuentre el elemento.
 
 - Buscar un elemento en la lista: esta operación permite buscar un elemento específico en la lista.
-´void Buscar(Lista L, Persona P)´
+  `void Buscar(Lista L, Persona P)`
 
 - Obtener el tamaño de la lista: esta operación permite obtener la cantidad de elementos presentes en la lista:
-´void Size(lista L)`
+  `void Size(lista L)`
 
 - Obtener el elemento en una posición específica: esta operación permite obtener el valor de un elemento en una posición determinada de la lista.
-`void Obtener_Elemento_POsicion(Lista L, int Posicion)´
+  `void Obtener_Elemento_POsicion(Lista L, int Posicion)´
 
 - Insertar un elemento en una posición específica: esta operación permite insertar un nuevo elemento en una posición específica de la lista.
-`void insertarElementoEnPosicion(lista L,Persona P, int posicion)`
-
-
+  `void insertarElementoEnPosicion(lista L,Persona P, int posicion)`
 
 # ¿En que casos debemos usar listas enlazadas?
 
@@ -111,7 +112,6 @@ Se recomienda utilizar listas enlazadas simples:
 
 - Cuando se necesitan estructuras de datos anidadas: Las listas enlazadas simples se pueden utilizar para implementar estructuras de datos anidadas, como por ejemplo listas de listas o árboles. Esta flexibilidad se debe a que cada nodo de la lista puede contener una referencia a otra lista o estructura de datos.
 
-
 # ¿Cuales son los principios de las operaciones mas importantes de las Listas enlazadas simples?
 
 Las operaciones más importantes en las listas enlazadas simples son la inserción, eliminación y búsqueda de elementos. A continuación, se describen los principios fundamentales de estas operaciones:
@@ -123,46 +123,5 @@ Las operaciones más importantes en las listas enlazadas simples son la inserci�
 - Búsqueda: la búsqueda de un elemento en una lista enlazada simple implica recorrer los nodos de la lista en orden, comparando el valor del elemento buscado con el valor de cada nodo. Si se encuentra el elemento, se devuelve la posición del nodo en la lista. Si el elemento no se encuentra en la lista, se devuelve un valor que indique que el elemento no está presente.
 
 ## Nota
+
 En general, las operaciones en las listas enlazadas simples se basan en la manipulación de punteros entre nodos para mantener la estructura de la lista coherente. Por lo tanto, es importante tener en cuenta los principios fundamentales de los punteros y el manejo de memoria dinámica para trabajar de manera eficiente con listas enlazadas simples.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
