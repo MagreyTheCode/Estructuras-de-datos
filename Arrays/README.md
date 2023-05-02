@@ -24,13 +24,14 @@ En este README se muestran algunas operaciones importantes para trabajar con arr
 
 Para inicializar un array en C, se puede hacer de varias formas. Una forma es inicializar cada elemento del array de forma individual:
 
-````c
+```c
 int miArray[5];
 miArray[0] = 1;
 miArray[1] = 2;
 miArray[2] = 3;
 miArray[3] = 4;
-miArray[4] = 5;"
+miArray[4] = 5;
+```
 
 ## Acceder a los elementos de un array
 
@@ -39,7 +40,7 @@ para acceder a un elemento específico de un array, se utiliza el índice corres
 ```c
  int numeros[5] = {1, 2, 3, 4, 5};
  int segundoNumero = numeros[1];
-````
+```
 
 ## Modificar los elementos de un array
 
