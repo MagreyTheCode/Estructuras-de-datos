@@ -40,7 +40,9 @@ persona info;
 struct nodo * next;
 };
 
-typedef struct nodo * list; // creavos un alias para la lista
+typedef struct nodo * list; // creamos un alias para la lista por si queremos usarlo en cabeceras de funciones
+
+//NB: te recomiendo esta forma de declarar listas enlazadas simples
 ```
 
 - Tercera Forma de declarar:
