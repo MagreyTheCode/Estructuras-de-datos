@@ -92,5 +92,127 @@ Para copiar un array en C, se puede utilizar la función memcpy de la librería`
 int miArray[5] = {1, 2, 3, 4, 5};
 int otroArray[5];
 memcpy(otroArray, miArray, 5 * sizeof(int));
+```
+# Otros tipos de Arrays
+## Matrices 
+Una matriz es una estructura de datos bidimensional que organiza elementos en filas y columnas. Puede verse como una tabla rectangular compuesta por celdas, donde cada celda contiene un valor o un elemento. Las matrices son muy utilizadas en programación y son fundamentales para representar datos tabulares, como datos numéricos, imágenes, gráficos, entre otros.
+
+La estructura básica de una matriz se define por su número de filas y columnas. Por ejemplo, una matriz de tamaño 3x3 tiene tres filas y tres columnas. La posición de cada elemento dentro de la matriz se especifica utilizando dos índices: el índice de la fila y el índice de la columna. La numeración de los índices generalmente comienza desde cero. Aqui le muestro un ejemplo de como se implementarian en el lenguaje C
+
+```c
+#include <stdio.h>
+
+int main() {
+    // Crear una matriz de 3x3 e inicializarla
+    int matriz[3][3] = {{1, 2, 3},
+                        {4, 5, 6},
+                       {7, 8, 9}};
+    int i, j; // creamos las variables de indexacion (indices) de la matriz "i" para las filas y "j" para las columnas
+    
+    // Acceder a un elemento específico
+    int elemento = matriz[1][2];  // El elemento en la fila 1, columna 2 (valor: 6)
+    
+    // Modificar un elemento
+    matriz[0][1] = 10;  // Cambiar el elemento en la fila 0, columna 1 a 10
+    
+    // Recorrer una matriz e imprimir sus elementos
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            printf("%d ", matriz[i][j]);
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
 
 ```
+## Operaciones importantes con matrices
+
+ Suma
+ : La suma de dos matrices se realiza sumando elemento por elemento en posiciones correspondientes. Ambas matrices deben tener las mismas dimensiones. Por ejemplo: 
+  
+   ```c
+   int main (){
+  int matriz1[2][2] = {{1, 2},
+                      {3, 4}};     // Inicializamos una matriz 2x2  (Matriz A)
+
+  int matriz2[2][2] = {{5, 6},   
+                      {7, 8}};     // Inicializamos otra matriz 2x2  (Matriz B)
+  int resultado[2][2];   // Matriz resultante de A+B
+  int i,j;  // Declaracion de variables de indexacion
+
+
+  for (i = 0; i < 2; i++) {
+    for (j = 0; j < 2; j++) {
+        resultado[i][j] = matriz1[i][j] + matriz2[i][j];
+    }
+  }
+
+  for (i = 0; i < 2; i++) {
+    for (j = 0; j < 2; j++) {
+       printf("%d\t%d\n",resultado[i][j]);  // Mostramos los valores por terminal
+    }
+  }
+
+  return 0; 
+
+  }
+
+   ```
+
+ Multiplicacion
+ : La multiplicación de dos matrices se realiza multiplicando filas de la primera matriz por columnas de la segunda matriz y sumando los productos resultantes. Las dimensiones de las matrices deben ser compatibles para la multiplicación de matrices. Por ejemplo:
+
+    ```c
+  int main (){
+  int matriz1[2][3] = {{1, 2, 3},
+                     {4, 5, 6}};   // Matriz A 
+
+  int matriz2[3][2] = {{7, 8},
+                     {9, 10},
+                     {11, 12}};  // Matriz B
+  int resultado[2][2];  /* Matriz Resultante, es de 2x2 porque las dos matrices al tener las mismas columnas, se cumple que la matriz
+                        * resultante sea el valor de la fila de la matriz A (2) mas el valor de la columna de la matriz B (2) mas la columna 
+                        */
+  int i,j,k;  // Variables de indexacion          
+
+  for (i = 0; i < 2; i++) {
+    for (j = 0; j < 2; j++) {
+        resultado[i][j] = 0;
+        for (k = 0; k < 3; k++) {
+            resultado[i][j] += matriz1[i][k] * matriz2[k][j];  // resultado [i][j] = resultado[i][j] + matriz1[i][k] * matriz2[k][j]
+        }
+    }
+    
+  }
+
+  for (i = 0; i < 2; i++) {
+    for (j = 0; j < 2; j++) {
+       printf("%d\t%d\n",resultado[i][j]);  // Mostramos los valores por terminal
+    }
+  }
+
+  return 0;
+  
+  }
+
+    ```
+
+ Transposicion de Terminos 
+ : La transposición de una matriz implica intercambiar sus filas por columnas. Esto se puede lograr creando una nueva matriz o realizando la transposición in situ en la matriz existente. Por ejemplo:
+
+ ```c
+ int matriz[3][2] = {{1, 2},
+                    {3, 4},
+                    {5, 6}};
+ int resultado[2][3];
+ int i,j;
+ for (i = 0; i < 3; i++) {
+    for (j = 0; j < 2; j++) {
+        resultado[j][i] = matriz[i][j];
+    }
+}
+
+ ```
+
