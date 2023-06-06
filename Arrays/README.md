@@ -129,8 +129,8 @@ int main() {
 ```
 ## Operaciones importantes con matrices
 
- Suma
- : La suma de dos matrices se realiza sumando elemento por elemento en posiciones correspondientes. Ambas matrices deben tener las mismas dimensiones. Por ejemplo: 
+ 1. Suma: 
+ La suma de dos matrices se realiza sumando elemento por elemento en posiciones correspondientes. Ambas matrices deben tener las mismas dimensiones. Por ejemplo: 
   
    ```c
    int main (){
@@ -161,8 +161,8 @@ int main() {
 
    ```
 
- Multiplicacion
- : La multiplicación de dos matrices se realiza multiplicando filas de la primera matriz por columnas de la segunda matriz y sumando los productos resultantes. Las dimensiones de las matrices deben ser compatibles para la multiplicación de matrices. Por ejemplo:
+ 2. Multiplicacion:
+ La multiplicación de dos matrices se realiza multiplicando filas de la primera matriz por columnas de la segunda matriz y sumando los productos resultantes. Las dimensiones de las matrices deben ser compatibles para la multiplicación de matrices. Por ejemplo:
 
     ```c
   int main (){
@@ -198,9 +198,11 @@ int main() {
   }
 
     ```
+    
 
- Transposicion de Terminos 
- : La transposición de una matriz implica intercambiar sus filas por columnas. Esto se puede lograr creando una nueva matriz o realizando la transposición in situ en la matriz existente. Por ejemplo:
+   3. Transposicion de Terminos:  
+ La transposición de una matriz implica intercambiar sus filas por columnas. Esto se puede lograr creando una nueva matriz o realizando la transposición in situ en la matriz existente. Por ejemplo:
+
 
  ```c
  int matriz[3][2] = {{1, 2},
@@ -213,6 +215,5 @@ int main() {
         resultado[j][i] = matriz[i][j];
     }
 }
-
  ```
 
