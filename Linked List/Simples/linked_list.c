@@ -51,7 +51,7 @@ int verificar(lista L)
   }
 }
 
-void leer_nodo(Persona *P)
+void leer_persona(Persona *P)
 {
   printf("\nNombre: ");
   fflush(stdin);
@@ -66,6 +66,8 @@ void leer_nodo(Persona *P)
 
 void mostrar_nodo(lista L)
 {
+  Persona *P;
+  L->data = *P;
   if (L == NULL)
   {
     printf("Lista Vacia\n");

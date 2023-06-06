@@ -29,7 +29,7 @@ void main()
             system("pause");
             break;
         case Leer_Estructura:
-            leer_nodo(&P);
+            leer_persona(&P);
             break;
         case Mostrar_Lista:
             mostrar_nodo(L);

@@ -29,7 +29,7 @@ typedef struct nodo *lista;
 /*Inicia una lista vacia*/
 lista list_empty(void);
 /*Esta funcion leerá los datos escritos por un usuario en la lista enlazada simple */
-void leer_nodo(Persona *P);
+void leer_persona(Persona *P);
 /*Esta funcion muestra los datos que ha almacenado la lista por pantalla*/
 void mostrar_nodo(lista L);
 
