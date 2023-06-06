@@ -371,15 +371,15 @@ En C los arrays de caracteres no son objetos de tipo string, sino simplemente se
 
 ## Funciones mas comunes 
    ### strlen():
-    Esta función se utiliza para obtener la longitud de una cadena de caracteres. Toma como argumento un array de caracteres y devuelve un valor entero que representa la cantidad de caracteres en la cadena, sin incluir el carácter nulo **\0** Ejemplo:
+   Esta función se utiliza para obtener la longitud de una cadena de caracteres. Toma como argumento un array de caracteres y devuelve un valor entero que representa la cantidad de caracteres en la cadena, sin incluir el carácter nulo **\0** Ejemplo:
   
   ```c
   char cadena[] = "Hola";
   int longitud = str  len(cadena);  // Devuelve 4 
   ```
 
-   ### strcpy()
-   :La función **strcpy()** se utiliza para copiar una cadena de caracteres en otra cadena. Recibe dos argumentos: el destino y el origen de la copia. Ambas cadenas deben ser arrays de caracteres válidos. Ejemplo:
+   ### strcpy():
+   La función **strcpy()** se utiliza para copiar una cadena de caracteres en otra cadena. Recibe dos argumentos: el destino y el origen de la copia. Ambas cadenas deben ser arrays de caracteres válidos. Ejemplo:
 
 ```c
 char origen[] = "Hola";
