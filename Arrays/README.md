@@ -75,9 +75,9 @@ Para buscar el máximo o el mínimo en un array en C, se puede recorrer el array
 
 ```c
 int miArray[5] = {1, 2, 3, 4, 5};
-int maximo = miArray[0];
+int maximo = miArray[0]; // int elem;
 for (int i = 1; i < 5; i++) {
-    if (miArray[i] > maximo) {
+    if (miArray[i] > maximo) {  // (miArray[i] == elem) esta condicion busca un elemento indefinido.
         maximo = miArray[i];
     }
 }
@@ -93,6 +93,47 @@ int miArray[5] = {1, 2, 3, 4, 5};
 int otroArray[5];
 memcpy(otroArray, miArray, 5 * sizeof(int));
 ```
+## Eliminar elementos en un Array
+Para eliminar los elementos realizaremos los siguientes pasos:
+  1. Identificr el índice del elemento que se desea eliminar en el arreglo.
+  2. Desplazar los elementos restantes a la izquierda para llenar el espacio dejado por el elemento eliminado.
+  3. Ajustar la longitud del arreglo para reflejar la eliminación del elemento.
+  - He aqui un ejemplo que ilustra los pasos anteriormente mencionados: 
+```c
+#include <stdio.h>
+
+void eliminarElemento(int arreglo[], int *longitud, int elemento) {
+    int i, j;
+    int encontrado = 0;
+
+    // Buscar el índice del elemento
+    for (i = 0; i < *longitud; i++) {
+        if (arreglo[i] == elemento) {
+            encontrado = 1;
+            break;
+        }
+    }
+
+    if (encontrado == 1) {
+        // Desplazar los elementos restantes a la izquierda
+        for (j = i; j < (*longitud - 1); j++) {
+            arreglo[j] = arreglo[j + 1];
+        }
+
+        // Ajustar la longitud del arreglo
+        (*longitud)--;
+
+        printf("Elemento eliminado.\n");
+    } else {
+        printf("Elemento no encontrado.\n");
+    }
+}
+```
+
+
+## Ordenar elementos en un Array
+
+
 # Otros tipos de Arrays
 ## Matrices 
 Una matriz es una estructura de datos bidimensional que organiza elementos en filas y columnas. Puede verse como una tabla rectangular compuesta por celdas, donde cada celda contiene un valor o un elemento. Las matrices son muy utilizadas en programación y son fundamentales para representar datos tabulares, como datos numéricos, imágenes, gráficos, entre otros.
@@ -209,4 +250,3 @@ int main() {
     }
 }
  ```
-
