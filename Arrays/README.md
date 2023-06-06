@@ -406,4 +406,4 @@ strcat(destino, origen);  // Concatena ", mundo!" a destino
 
 Nota [^1]
 [^1]: Todas estas funciones se encuentran en la libreria <string.h>, por lo que se debe tener encuenta antes de su uso.
-  2. : Ahora Por cada carpeta de este repositorio trabajaremos en un proyecto simple segun la estructura de datos que corresponda
+[^1]: Ahora Por cada carpeta de este repositorio trabajaremos en un proyecto simple segun la estructura de datos que corresponda
