@@ -404,8 +404,9 @@ char origen[] = ", mundo!";
 strcat(destino, origen);  // Concatena ", mundo!" a destino
 ```
 
-Nota [^1] [^2] [^3] [^4]
+Nota [^1] [^2] [^3] [^4] [^5]
 [^1]: Todas las funciones citadas en la seccion de Array de caracteres se encuentran en la libreria <string.h>, por lo que se debe tener encuenta antes de su uso.
-[^2]: Ahora Por cada carpeta de este repositorio trabajaremos en un proyecto simple segun la estructura de datos que corresponda.
+[^2]: Ahora Por cada carpeta de este repositorio trabajaremos en un proyecto simple segun la variacion de la estructura de datos (Array) que corresponda.
 [^3]: Trabajaremos de forma modular donde tendremos un archivos **header.h, functions.c y main.c**.
 [^4]: en los archivos *header.h* estaran las cabeceras de funciones, *function.c* estara el desarrollo de las funciones y en el *main.c* estara el programa principal desarrollado.
+[^5]: Los Arrays solo se usan cuando conocemos el numero de elementos que deseamos almacenar en caso contrario usamos listas enlazadas
