@@ -340,3 +340,58 @@ int main() {
     }
 }
  ```
+## Array de Caracteres 
+Un array de caracteres, también conocido como una cadena de caracteres o string, es una estructura de datos que representa una secuencia de caracteres en lenguajes de programación como C.
+
+En C, un array de caracteres se define utilizando el tipo de datos `char` y se representa como una secuencia contigua de elementos char en la memoria. La secuencia de caracteres se termina con el carácter `nulo \0`, que indica el final de la cadena.
+
+Aquí tienes un ejemplo de cómo se declara un array de caracteres en C:
+```c
+char cadena[] = "Hola, mundo!";
+```
+En este caso, el array de caracteres cadena tiene una longitud automática y se inicializa con la cadena "Hola, mundo!". El compilador determina automáticamente el tamaño del array basándose en la longitud de la cadena de inicialización.
+
+También puedes declarar un array de caracteres sin inicializarlo:
+```c
+char nombre[50];
+```
+En este ejemplo, se declara un array de caracteres llamado **nombre** con una longitud de 50 elementos. Puedes asignar una cadena de caracteres posteriormente utilizando funciones de manipulación de cadenas como **strcpy()** o leyendo la entrada del usuario.
+
+Un array de caracteres se puede acceder elemento por elemento utilizando un índice entero, donde el primer carácter se encuentra en el índice 0. Por ejemplo:
+```c
+char letra = cadena[0];  // Obtiene el primer carácter de la cadena
+```
+También se puede utilizar la notación de puntero para manipular y recorrer un array de caracteres:También se puede utilizar la notación de puntero para manipular y recorrer un array de caracteres:
+```c
+char *ptr = cadena;  // Apunta al primer carácter de la cadena
+```
+Los arrays de caracteres se utilizan comúnmente para representar texto en C, y existen numerosas funciones de biblioteca para trabajar con ellos, como **strlen()** para obtener la longitud de una cadena, **strcmp()** para comparar cadenas, **strcat()** para concatenar cadenas, entre otras.
+
+En C los arrays de caracteres no son objetos de tipo string, sino simplemente secuencias de caracteres en memoria. El programador debe asegurarse de gestionar correctamente la memoria y tener en cuenta las limitaciones de longitud y el carácter nulo `\0` al trabajar con arrays de caracteres.
+
+### Funciones mas comunes 
+1. **strlen():** Esta función se utiliza para obtener la longitud de una cadena de caracteres. Toma como argumento un array de caracteres y devuelve un valor entero que representa la cantidad de caracteres en la cadena, sin incluir el carácter nulo **\0** Ejemplo:
+   ```c
+  char cadena[] = "Hola";
+  int longitud = strlen(cadena);  // Devuelve 4
+   ```
+2. **strcpy():** La función **strcpy()** se utiliza para copiar una cadena de caracteres en otra cadena. Recibe dos argumentos: el destino y el origen de la copia. Ambas cadenas deben ser arrays de caracteres válidos. Ejemplo:
+```c
+char origen[] = "Hola";
+char destino[10];
+strcpy(destino, origen);  // Copia "Hola" a destino
+```
+3. **strcmp():** Esta función se utiliza para comparar dos cadenas de caracteres. Devuelve un valor entero que indica la relación entre las cadenas. Si el valor devuelto es negativo, la primera cadena es menor que la segunda; si es positivo, la primera cadena es mayor que la segunda; si es cero, las cadenas son iguales. Ejemplo:
+   ```c
+  char cadena1[] = "Hola";
+  char cadena2[] = "Hola";
+  int resultado = strcmp(cadena1, cadena2);  // Devuelve 0
+  ```
+4. **strcat():** La función **strcat()** se utiliza para concatenar dos cadenas de caracteres. Toma como argumentos el destino y el origen de la concatenación, y une el contenido del origen al final del destino. Ambas cadenas deben ser arrays de caracteres válidos y el destino debe tener suficiente espacio para contener la cadena resultante. Ejemplo:
+```c
+char destino[20] = "Hola";
+char origen[] = ", mundo!";
+strcat(destino, origen);  // Concatena ", mundo!" a destino
+```
+Nota [^1]
+[^1]: Todas estas funciones se encuentran en la libreria <string.h>, por lo que se debe tener encuenta andes de su uso 
