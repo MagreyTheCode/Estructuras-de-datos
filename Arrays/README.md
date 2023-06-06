@@ -404,6 +404,8 @@ char origen[] = ", mundo!";
 strcat(destino, origen);  // Concatena ", mundo!" a destino
 ```
 
-Nota [^1] [^2]
+Nota [^1] [^2] [^3] [^4]
 [^1]: Todas estas funciones se encuentran en la libreria <string.h>, por lo que se debe tener encuenta antes de su uso.
-[^2]: Ahora Por cada carpeta de este repositorio trabajaremos en un proyecto simple segun la estructura de datos que corresponda
+[^2]: Ahora Por cada carpeta de este repositorio trabajaremos en un proyecto simple segun la estructura de datos que corresponda.
+[^3]: Trabajaremos de forma modular donde tendremos un archivos **header.h, functions.c y main.c**.
+[^4]: en los archivos *header.h* estaran las cabeceras de funciones, *function.c* estara el desarrollo de las funciones y en el *main.c* estara el programa principal desarrollado.
