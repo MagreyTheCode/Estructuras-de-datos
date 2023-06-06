@@ -132,8 +132,98 @@ void eliminarElemento(int arreglo[], int *longitud, int elemento) {
 
 
 ## Ordenar elementos en un Array
+Cuando queremos ordenar los elementos de un arreglo o array debemos fijarnos en el tamao del mismo si queremos tener una buena eficiencia, como consecuencia a esto debemos optar el uso de ciertos algoritmos de ordenamiento.
+- Para ordenar pequeñas cantidades de datos usamos los algoritmos Bubble sort o Selection Sort
+- Para ordenar grandes cantidades de datos usamos los algoritmos Quicksort,Merge Sort o Heapsort
+### Nota:
+Debes elegir el uso de un algoritmo dependiendo del problema del tamaño de los datos que deseas ordenar del arreglo, he aqui un ejemplo donde
+implementare los algoritmos selection sort y Merge Sort:
+- Método de selección (Selection Sort):
+  Este algoritmo encuentra repetidamente el elemento mínimo del arreglo y lo intercambia con el elemento en la posición actual. Se inicia desde el inicio del arreglo y se mueve hacia la derecha en cada iteración. Al final de cada iteración, se coloca el elemento mínimo en su posición correcta.
+  ```c
+  void selectionSort(int arreglo[], int longitud) {
+    int i, j, indiceMin, temp;
 
+    // Recorrer el arreglo
+    for (i = 0; i < longitud - 1; i++) {
+        // Encontrar el índice del elemento mínimo en el subarreglo no ordenado
+        indiceMin = i;
+        for (j = i + 1; j < longitud; j++) {
+            if (arreglo[j] < arreglo[indiceMin]) {
+                indiceMin = j;
+            }
+        }
 
+        // Intercambiar el elemento mínimo con el elemento actual
+        temp = arreglo[i];
+        arreglo[i] = arreglo[indiceMin];
+        arreglo[indiceMin] = temp;
+    }
+  }
+  ```
+- Merge Sort:
+   Es un algoritmo basado en la técnica de dividir y conquistar. Divide el arreglo en mitades más pequeñas, las ordena por separado y luego combina las mitades ordenadas para obtener el arreglo completo ordenado. A diferencia de Quicksort, Merge Sort tiene un rendimiento más consistente y garantiza una complejidad de tiempo de O(n log n) en todos los casos.
+   ```c
+   void merge(int arreglo[], int inicio, int medio, int fin) {
+    int i, j, k;
+    int n1 = medio - inicio + 1;
+    int n2 = fin - medio;
+
+    // Crear arreglos temporales
+    int izquierda[n1], derecha[n2];
+
+    // Copiar los datos a los arreglos temporales
+    for (i = 0; i < n1; i++) {
+        izquierda[i] = arreglo[inicio + i];
+    }
+    for (j = 0; j < n2; j++) {
+        derecha[j] = arreglo[medio + 1 + j];
+    }
+
+    // Combinar los arreglos temporales de vuelta al arreglo original
+    i = 0; // Índice inicial del subarreglo izquierdo
+    j = 0; // Índice inicial del subarreglo derecho
+    k = inicio; // Índice inicial del subarreglo fusionado
+
+    while (i < n1 && j < n2) {
+        if (izquierda[i] <= derecha[j]) {
+            arreglo[k] = izquierda[i];
+            i++;
+        } else {
+            arreglo[k] = derecha[j];
+            j++;
+        }
+        k++;
+    }
+
+    // Copiar los elementos restantes de izquierda[] si los hay
+    while (i < n1) {
+        arreglo[k] = izquierda[i];
+        i++;
+        k++;
+    }
+
+    // Copiar los elementos restantes de derecha[] si los hay
+    while (j < n2) {
+        arreglo[k] = derecha[j];
+        j++;
+        k++;
+    }
+  } 
+
+  void mergeSort(int arreglo[], int inicio, int fin) {
+    if (inicio < fin) {
+        int medio = inicio + (fin - inicio) / 2;
+
+        // Ordenar la primera mitad y la segunda mitad
+        mergeSort(arreglo, inicio, medio);
+        mergeSort(arreglo, medio + 1, fin);
+
+        // Combinar las dos mitades ordenadas
+        merge(arreglo, inicio, medio, fin);
+    } 
+  }     // Llamada al main mergeSort(arreglo, 0, longitud - 1);
+   ```
 # Otros tipos de Arrays
 ## Matrices 
 Una matriz es una estructura de datos bidimensional que organiza elementos en filas y columnas. Puede verse como una tabla rectangular compuesta por celdas, donde cada celda contiene un valor o un elemento. Las matrices son muy utilizadas en programación y son fundamentales para representar datos tabulares, como datos numéricos, imágenes, gráficos, entre otros.
