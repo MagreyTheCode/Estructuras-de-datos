@@ -160,23 +160,20 @@ int main() {
   }
 
  ```
-   ### Multiplicacion:
+ ### Multiplicacion:
  La multiplicación de dos matrices se realiza multiplicando filas de la primera matriz por columnas de la segunda matriz y sumando los productos resultantes. Las dimensiones de las matrices deben ser compatibles para la multiplicación de matrices. Por ejemplo:
 
-    ```c
-    
+  ```c   
   int main () {
   int matriz1[2][3] = {{1, 2, 3},
                      {4, 5, 6}};   // Matriz A 
-
   int matriz2[3][2] = {{7, 8},
                      {9, 10},
-                     {11, 12}};  // Matriz B
+                   {11, 12}};  // Matriz B
   int resultado[2][2];  /* Matriz Resultante, es de 2x2 porque las dos matrices al tener las mismas columnas, se cumple que la matriz
                         * resultante sea el valor de la fila de la matriz A (2) mas el valor de la columna de la matriz B (2) mas la columna 
                         */
   int i,j,k;  // Variables de indexacion          
-
   for (i = 0; i < 2; i++) {
     for (j = 0; j < 2; j++) {
         resultado[i][j] = 0;
@@ -194,9 +191,10 @@ int main() {
   }
 
   return 0;
+
   }
-    ```
-   ### Transposicion de Terminos:  
+  ```
+ ### Transposicion de Terminos:  
  La transposición de una matriz implica intercambiar sus filas por columnas. Esto se puede lograr creando una nueva matriz o realizando la transposición in situ en la matriz existente. Por ejemplo:
 
  ```c
